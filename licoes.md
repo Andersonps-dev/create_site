@@ -10,7 +10,7 @@
 - **Cloudflare Web Analytics** injeta script de outro domínio que a CSP bloqueia (erro no console, Best Practices 92). Desligue no painel ou libere na CSP.
 - **Cloudflare esconde e-mails** (`/cdn-cgi/l/email-protection`): o script é do mesmo domínio, então funciona com CSP `'self'`. Conferir no navegador que o e-mail aparece.
 - **Ferramenta de screenshot do chrome-devtools** só salva dentro do workspace: salve em uma pasta do projeto que esteja no `.gitignore` (ex.: `divulgacao/`).
-- **Servidor muda sem avisar** (ex.: nginx migrou de `quitei-nginx-1` para `edge-proxy-nginx-1`). Antes de mexer em config, descubra o contêiner atual (`docker ps`, `docker inspect` mounts) e compare com a cópia do repositório.
+- **Servidor muda sem avisar** (ex.: o contêiner do nginx foi trocado por outro). Antes de mexer em config, descubra o contêiner atual (`docker ps`, `docker inspect` mounts) e compare com a cópia do repositório.
 
 ## De processo
 - **"Ao redor" / termos vagos**: confirme o que o usuário quer antes de mexer (uma vez mudei a animação de fundo quando ele queria o layout do texto).
