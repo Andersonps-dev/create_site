@@ -1,0 +1,19 @@
+# NOME FANTASIA
+
+> Uma frase: o que a empresa faz, para quem e onde. Ex.: "Instalação, higienização e manutenção de ar-condicionado em Extrema/MG e região."
+
+Atendimento: CIDADES ATENDIDAS.
+Contato: WhatsApp (DDD) NÚMERO — https://wa.me/55DDDNUMERO
+Horário: seg a sex 9h–18h; sáb 9h–13h.
+
+## Serviços
+- Serviço 1: descrição curta
+- Serviço 2: descrição curta
+
+## Páginas
+- [Página inicial](https://DOMINIO/): serviços, trabalhos, perguntas frequentes e orçamento
+- [Política de privacidade](https://DOMINIO/politica-de-privacidade)
+
+## Links
+- Instagram: https://www.instagram.com/PERFIL/
+- Perfil no Google: LINK
