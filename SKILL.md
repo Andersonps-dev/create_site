@@ -21,6 +21,8 @@ criar-site/
   referencias/sites.md      sites de referência e o que copiar de cada um
   referencias/achados.md    caixa de entrada: dicas encontradas (Instagram etc.)
   licoes.md                 erros que já aconteceram e como evitar
+  prompts/brief.md          prompts prontos (brief, refino, SEO)
+  instalar.ps1 / .sh        instala skills e MCPs usados
   starter/                  projeto inicial (infra pronta, sem estilo visual)
 ```
 
@@ -33,6 +35,7 @@ criar-site/
 ## Fases
 
 ### 1. Briefing (`checklists/briefing.md`)
+Se o usuário colou o brief de `prompts/brief.md`, aproveite o que ele já respondeu e pergunte só o que faltar.
 Colete os dados do negócio e as escolhas de estilo. Pergunte em blocos curtos (AskUserQuestion, até 4 por vez). Se o usuário já tiver um site publicado, leia-o e extraia os textos e dados antes de perguntar.
 Saída: `PRODUCT.md` na raiz do projeto (quem é, público, serviços, diferenciais, o que não pode ser inventado) e `.env` preenchido.
 

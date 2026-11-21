@@ -6,31 +6,41 @@ Dois comandos:
 - **`/criar-site`**: conduz o site novo em 8 fases (briefing → referência → projeto inicial → design → celular → SEO → prévia e deploy → fechamento).
 - **`/guardar-achado`**: guarda na biblioteca uma dica encontrada (print do Instagram, link, vídeo, texto), no arquivo certo.
 
-## Instalação
+## Instalação (tudo de uma vez)
+Pré-requisitos: [Node.js 20+](https://nodejs.org), Git e [Claude Code](https://claude.com/claude-code).
 
-```bash
-# macOS / Linux / Git Bash no Windows
-git clone https://github.com/Andersonps-dev/create_site.git ~/.claude/skills/criar-site
-mkdir -p ~/.claude/skills/guardar-achado
-cp ~/.claude/skills/criar-site/extras/guardar-achado/SKILL.md ~/.claude/skills/guardar-achado/
-```
-
+**Windows (PowerShell):**
 ```powershell
-# PowerShell no Windows
 git clone https://github.com/Andersonps-dev/create_site.git "$env:USERPROFILE\.claude\skills\criar-site"
-New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills\guardar-achado" | Out-Null
-Copy-Item "$env:USERPROFILE\.claude\skills\criar-site\extras\guardar-achado\SKILL.md" "$env:USERPROFILE\.claude\skills\guardar-achado\"
+powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\.claude\skills\criar-site\instalar.ps1"
 ```
 
-Reabra o Claude Code e digite `/criar-site` numa pasta vazia.
+**macOS / Linux:**
+```bash
+git clone https://github.com/Andersonps-dev/create_site.git ~/.claude/skills/criar-site
+bash ~/.claude/skills/criar-site/instalar.sh
+```
 
-**Atualizar:** `git -C ~/.claude/skills/criar-site pull` (e copie de novo o `guardar-achado` se ele mudou).
+O instalador coloca:
 
-## Recomendado (opcional)
-O processo usa estas ferramentas quando estão instaladas:
-- MCP **chrome-devtools** (medir referências, screenshots, Lighthouse): `claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest`
-- Skills de design: impeccable, design-taste-frontend, emil-design-eng, apple-design, animate, mobile-native
-- Node.js 20+ e Git Bash (Windows) para o projeto inicial e o deploy
+| Ferramenta | Para que serve | Fonte |
+|---|---|---|
+| `/criar-site` e `/guardar-achado` | processo e biblioteca | este repositório |
+| Skills do Emil Kowalski (emil-design-eng, animate, apple-design, mobile-native, review-animations…) | design, animação, celular | [emilkowalski/skills](https://github.com/emilkowalski/skills) (MIT) |
+| Taste (design-taste-frontend) | estrutura e sensação de sites de alto nível | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (MIT) |
+| Impeccable | design, crítica, polimento, PRODUCT.md/DESIGN.md | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) (Apache 2.0) |
+| Skills da Vercel (web-design-guidelines, deploy-to-vercel…) | revisão de UI, deploy de prévia | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) |
+| MCP chrome-devtools | abrir referências, medir, prints, Lighthouse | [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) |
+| MCP Playwright | testar no navegador e no celular | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) (Apache 2.0) |
+| MCP shadcn | componentes (projetos React) | [Jpisnice/shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) |
+
+Opcionais: `-Figma` / `--figma` (Figma MCP oficial) e `-Magic` / `--magic` (plugin [21st Magic](https://github.com/21st-dev/magic-mcp), precisa da chave `API_KEY_21ST`).
+
+Depois: feche e abra o Claude Code, abra uma pasta vazia e digite `/criar-site`. Prompts prontos em [`prompts/brief.md`](prompts/brief.md).
+
+Observação: o Impeccable adiciona hooks globais no `~/.claude/settings.json` (é o instalador oficial dele).
+
+**Atualizar:** `git -C ~/.claude/skills/criar-site pull` e rode o instalador de novo.
 
 ## Estrutura
 ```
@@ -39,6 +49,11 @@ checklists/               briefing, SEO (20+ itens), lançamento
 padroes/                  stack, design, efeitos (com código), celular, conteúdo
 referencias/              sites de referência e caixa de achados
 licoes.md                 erros que já aconteceram e como evitar
+prompts/brief.md          prompts prontos (começar, refinar, SEO)
+instalar.ps1 / .sh        instalador de tudo
 starter/                  projeto Vite inicial (infra sem estilo visual)
 extras/guardar-achado/    skill /guardar-achado
 ```
+
+## Créditos
+Setup de skills e prompt de brief inspirados no guia gratuito "Setup de Web Design no Claude", da Deploy Club. As skills e MCPs pertencem aos seus autores (licenças acima) e são baixadas dos repositórios oficiais pelo instalador; este repositório não as redistribui.
