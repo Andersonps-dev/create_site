@@ -5,7 +5,7 @@ description: Guarda na biblioteca de criação de sites (skill criar-site) uma d
 
 # Guardar achado na biblioteca
 
-Biblioteca: `~/.claude/skills/criar-site/` (no Windows `C:\Users\aaand\.claude\skills\criar-site\`).
+Biblioteca: `~/.claude/skills/criar-site/` (no Windows `%USERPROFILE%.claudeskillsiar-site`).
 
 ## Passos
 1. **Entenda o achado.** Leia o print (Read na imagem), abra o link (web-fetch) ou leia o texto. Se for um site de referência, abra-o no navegador (chrome-devtools) e meça o que interessa: margens, largura máxima, fontes, curvas de animação, comportamento no celular.
